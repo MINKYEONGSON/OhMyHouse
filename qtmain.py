@@ -24,13 +24,13 @@ class MyApp(QWidget):
         articleList += jungsoseoul.get_data()
         #articleList += sh.get_data()
         articleList += chungyakhome.get_data()
-        
+
         self.drawGrid(grid, articleList)
-        
+
         self.move(0, 0)
         self.resize(0, 0)
         self.show()
-        
+
     def drawGrid(self, grid, articleList):
         tr_id = QLabel('#')
         tr_type = QLabel('구분')
@@ -46,7 +46,7 @@ class MyApp(QWidget):
         grid.addWidget(tr_start_date, 0, 4)
         grid.addWidget(tr_end_date, 0, 5)
         grid.addWidget(tr_date, 0, 6)
-        
+
         #rr = sorted(articleList, key=(lambda x: x['start_date']))
         for i in range(0, len(articleList)):
             article = articleList[i]

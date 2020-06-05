@@ -29,7 +29,7 @@ def logit(area):
             tmp = td_list[7].get_text().split('~')[1].split('-')
             end_date = datetime.date(year=int(tmp[0]), month=int(tmp[1]), day=int(tmp[2]))
             today = datetime.date.today()
-            if today <= start_date:
+            if today <= end_date:
                 subject = str(td_list[3].get_text())
                 id = int(tr['data-pbno'])
                 article.append({'type': type, 'area': area, 'start_date': start_date, 'end_date': end_date, 'date':date, 'subject': subject, 'id': id, 'link': articleLink % (id, id, subject)})
@@ -41,5 +41,8 @@ def get_data():
     article += logit('서울')
     article += logit('경기')
     article += logit('인천')
+    article += logit('세종')
+    article += logit('대전')
+    article += logit('충북')
     #print(article)
     return article
