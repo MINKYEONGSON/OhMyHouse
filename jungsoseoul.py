@@ -6,7 +6,7 @@ import datetime
 
 def get_data():
     #: url
-    params = urllib.parse.urlencode({'tgtTypeCd': 'SUB_CONT', 'searchKey': '특별공급'}).encode('utf-8')
+    params = urllib.parse.urlencode({'tgtTypeCd': 'SUB_CONT', 'searchKey': '모집중'}).encode('utf-8')
     req = urllib.request.Request(url='https://www.mss.go.kr/site/seoul/ex/bbs/List.do?cbIdx=146')
     # req.set_proxy('127.0.0.1:8080', 'http')
     f = urllib.request.urlopen(req, data=params)
